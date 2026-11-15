@@ -15,6 +15,11 @@ int sum_args() {
 // Recursive case: sum the first argument with the sum of the remaining arguments
 // Add your code here...
 
+template <typename T, typename... Args>
+auto sum_args(T first, Args... args){
+  return first + sum_args(args...);
+}
+
 int main() {
     // Test cases
     cout << sum_args(1, 2.5, 3, 4) << endl;      // Expected Output: 10.5
@@ -23,3 +28,4 @@ int main() {
 
     return 0;
 }
+
